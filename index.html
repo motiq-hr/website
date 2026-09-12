@@ -1,467 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-document.documentElement.classList.add('js');
-/* Theme before first paint (no flash): saved choice wins,
-   otherwise first visit follows the OS preference */
-try{
-  var t=localStorage.getItem('motiq-theme');
-  if(t==='light'||(!t&&matchMedia('(prefers-color-scheme: light)').matches))
-    document.documentElement.setAttribute('data-theme','light');
-}catch(e){}
-</script>
-<title>Motiq — Robotics, Automation &amp; AI Infrastructure</title>
-<meta name="description" content="Motiq is a four-engineer team in Zagreb, Croatia building robots, industrial automation and the AI infrastructure that runs them. On-site work anywhere in the EU.">
-<meta name="theme-color" content="#0B0C0F">
-<meta property="og:title" content="Motiq — Robotics, Automation &amp; AI Infrastructure">
-<meta property="og:description" content="Four engineers building robots, automation and the systems that run them. Based in Zagreb, on-site across the EU.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0C0F'/%3E%3Cpath d='M16 46V20l16 16 16-16v26' fill='none' stroke='%23EDEEF1' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motiq - Private AI, automation and cloud support</title>
+  <meta name="description" content="Get useful answers from your documents and spend less time on repetitive tasks. Private AI, automation and cloud support from Motiq.">
+  <meta name="theme-color" content="#f7f6f2">
+  <script src="js/theme.js"></script>
+  <meta property="og:title" content="Motiq - Private AI, automation and cloud support">
+  <meta property="og:description" content="Useful answers from your documents. Less repetitive work. Private AI, automation and cloud support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.motiq.biz/">
+  <link rel="canonical" href="https://www.motiq.biz/">
+  <link rel="alternate" hreflang="en" href="https://www.motiq.biz/">
+  <link rel="alternate" hreflang="hr" href="https://www.motiq.biz/hr.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.motiq.biz/">
+  <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico" sizes="16x16 32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Motiq home">
+        <img class="logo-light" src="assets/brand/motiq-horizontal.svg" alt="Motiq" width="480" height="156" fetchpriority="high">
+        <img class="logo-dark" src="assets/brand/motiq-reversed.svg" alt="Motiq" width="480" height="156">
+      </a>
 
-<header class="site-header" id="top">
-  <span class="scroll-progress" aria-hidden="true"></span>
-  <div class="wrap header-inner">
-    <a class="wordmark" href="#top" aria-label="Motiq — home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="currentColor"/><path d="M16 46V20l16 16 16-16v26" fill="none" style="stroke:var(--bg)" stroke="#0B0C0F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Motiq
-    </a>
-    <nav class="site-nav" aria-label="Main">
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <nav class="lang" aria-label="Language">
+          <a href="index.html" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a>
+          <a href="hr.html" lang="hr" hreflang="hr" aria-label="Hrvatski">HR</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false" hidden>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.1A8.3 8.3 0 0 1 9.9 4 8.3 8.3 0 1 0 20 14.1Z"/></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2V4M12 20V22M2 12H4M20 12H22M5 5 6.5 6.5M17.5 17.5 19 19M5 19 6.5 17.5M17.5 6.5 19 5"/></svg>
+        </button>
+        <a class="btn btn-small btn-primary" href="#demo"><span class="link-label">See an example</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
       <a href="#work">Work</a>
-      <a href="#team">Team</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#demo">See an example</a>
     </nav>
-    <span class="status"><i aria-hidden="true"></i>Available · EU-wide</span>
-    <button type="button" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="5.3" y1="5.3" x2="7.4" y2="7.4"/><line x1="16.6" y1="16.6" x2="18.7" y2="18.7"/><line x1="16.6" y1="7.4" x2="18.7" y2="5.3"/><line x1="5.3" y1="18.7" x2="7.4" y2="16.6"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>
-    </button>
-  </div>
-</header>
+  </header>
 
-<main id="main">
+  <main id="main">
+    <section class="hero section-grid">
+      <div class="wrap hero-wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">PRIVATE AI &amp; AUTOMATION</p>
+          <h1>Useful answers from your documents.<br><span class="accent">Without the long search.</span></h1>
+          <p class="hero-lead">Ask a question and get a clear answer from your files. We build private AI that helps your team spend less time reading, copying data and repeating the same tasks.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact"><span class="link-label">Talk to us</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a>
+            <a class="btn btn-secondary" href="#demo"><span class="link-label">See an example</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a>
+          </div>
+          <p class="hero-location"><span class="status-dot" aria-hidden="true"></span>Based in Zagreb · Europe, the US &amp; worldwide</p>
+        </div>
+        <figure class="document-flow is-playing" aria-labelledby="flow-title">
+          <div class="flow-heading">
+            <figcaption class="mono" id="flow-title">FROM FILES TO ANSWERS</figcaption>
+            <button class="flow-replay" type="button" hidden>Replay animation</button>
+          </div>
+          <div class="flow-diagram">
+            <svg class="flow-art" viewBox="0 0 640 240" aria-hidden="true" focusable="false">
+              <path class="flow-track" d="M166 122H267M373 122H474"/>
+              <g class="flow-documents">
+                <rect class="flow-sheet flow-sheet-back" x="50" y="55" width="90" height="116" rx="8" transform="rotate(-12 95 113)"/>
+                <rect class="flow-sheet flow-sheet-middle" x="66" y="60" width="90" height="116" rx="8" transform="rotate(7 111 118)"/>
+                <g class="flow-sheet-front">
+                  <path class="flow-sheet" d="M87 70H138L162 94V183H87Q79 183 79 175V78Q79 70 87 70Z"/>
+                  <path class="flow-ink" d="M138 70V94H162M96 116H144M96 130H144M96 144H129M96 158H136"/>
+                </g>
+              </g>
+              <g class="flow-packet flow-packet-in"><rect x="180" y="116" width="12" height="12" rx="3"/></g>
+              <g class="flow-server">
+                <rect class="flow-server-shell" x="268" y="55" width="104" height="140" rx="16"/>
+                <rect class="flow-server-slot" x="281" y="115" width="78" height="27" rx="5"/>
+                <rect class="flow-server-slot" x="281" y="150" width="78" height="27" rx="5"/>
+                <path class="flow-ink" d="M293 128H327M293 163H327"/>
+                <circle class="flow-light" cx="345" cy="128" r="3"/><circle class="flow-light" cx="345" cy="163" r="3"/>
+                <rect class="flow-lock" x="308" y="80" width="24" height="20" rx="4"/>
+                <path class="flow-lock-loop" d="M313 80V74A7 7 0 0 1 327 74V80M320 88V92"/>
+              </g>
+              <g class="flow-packet flow-packet-out"><rect x="388" y="116" width="12" height="12" rx="3"/></g>
+              <g class="flow-result">
+                <rect class="flow-sheet" x="476" y="76" width="118" height="96" rx="10"/>
+                <rect class="flow-result-tag" x="490" y="91" width="24" height="24" rx="6"/>
+                <path class="flow-check" d="M496 103L500 107L508 99"/>
+                <path class="flow-ink" d="M524 103H578M492 130H576M492 144H559"/>
+              </g>
+            </svg>
+            <div class="flow-labels"><span>Documents</span><span>Private AI</span><span>Clear answers</span></div>
+            <p class="flow-privacy">Access for your team. Sources you can check.</p>
+          </div>
+          <div class="flow-example">
+            <span class="mono">EXAMPLE</span>
+            <p class="flow-question">When is the payment due?</p>
+            <div class="flow-answer"><p>Within 30 days of the invoice date.</p><span>Source: contract, page 2</span></div>
+          </div>
+        </figure>
+      </div>
+    </section>
 
-<!-- ============ Hero stage ============ -->
-<section class="stage" data-mode="o" aria-label="What Motiq does">
+    <section class="section section-grid" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">OUR SERVICES</p>
+          <h2>What we can help with.</h2>
+          <p>Less time on routine tasks. Reliable support for the software you use.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-meta"><span class="service-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 22V16M16 22V10M25 22V4"/><path d="M4 28H28"/></svg></span><span class="mono">01 / AI</span></div>
+            <h3>Private AI and automation.</h3>
+            <p>Get clear answers from PDFs, manuals and reports. Cut down on copying data, sorting requests and other repeated tasks.</p>
+            <details class="service-details">
+              <summary>More details</summary>
+              <div class="feature-list">
+                <div><strong>Your documents</strong><span>We connect the files you choose and set who can access them. Answers include the source so your team can check them.</span></div>
+                <div><strong>Your tools</strong><span>We connect AI to the software you already use. Your team approves important actions.</span></div>
+              </div>
+            </details>
+            <a class="text-link" href="#demo"><span class="link-label">See an example</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a>
+          </article>
+          <article class="pillar" id="cloud-detail">
+            <div class="pillar-meta"><span class="service-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 10 16 4 28 10 16 16ZM4 17 16 23 28 17M4 24 16 30 28 24"/></svg></span><span class="mono">02 / CLOUD</span></div>
+            <h3>Cloud setup and support.</h3>
+            <p>We put your application online and look after access, backups and reliable day-to-day operation.</p>
+            <details class="service-details">
+              <summary>More details</summary>
+              <div class="feature-list">
+                <div><strong>Setup</strong><span>AWS infrastructure, application deployment and access controls.</span></div>
+                <div><strong>Ongoing support</strong><span>Monitoring, backups, updates and keeping cloud costs under control.</span></div>
+              </div>
+            </details>
+            <a class="text-link" href="#contact"><span class="link-label">Tell us what you need</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a>
+          </article>
+        </div>
+        <!-- locale:local-services -->
+      </div>
+    </section>
 
-  <div class="scenes intro" style="--d:.35s">
+    <section class="section demo-section" id="demo">
+      <div class="wrap demo-layout">
+        <div class="demo-copy">
+          <p class="eyebrow">EXAMPLE</p>
+          <h2>A question.<br><span class="accent">A useful answer.</span></h2>
+          <p>This example shows how an answer can point to a document. We can build the same kind of tool around your files.</p>
+          <div class="demo-actions">
+            <a class="btn btn-primary" href="#contact"><span class="link-label">Use your own documents</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a>
+          </div>
+        </div>
+        <div class="demo-window theme-dark" role="group" aria-label="Illustrative answer from a document">
+          <div class="window-bar">
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>Answer from a document</span>
+            <span class="window-secure">EXAMPLE</span>
+          </div>
+          <div class="window-body">
+            <div class="demo-brand">MOTIQ</div>
+            <div class="question-box">What should I check when alarm E17 appears?</div>
+            <div class="answer-card">
+              <p>The guide lists three checks: the inlet filter, coolant level and the cooling loop. Open the source for the full procedure.</p>
+              <div class="source-row"><span>Service manual · Page 18</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Overview: clickable triptych — field / factory / servers -->
-    <svg class="scene sc-o" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-      <defs>
-        <clipPath id="tri-a"><polygon points="0,0 520,0 380,320 0,320"/></clipPath>
-        <clipPath id="tri-i"><polygon points="520,0 900,0 760,320 380,320"/></clipPath>
-        <clipPath id="tri-s"><polygon points="900,0 1200,0 1200,320 760,320"/></clipPath>
-        <clipPath id="belt-o"><rect x="540" y="200" width="340" height="52"/></clipPath>
-      </defs>
+    <section class="section section-grid" id="work">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">OUR WORK</p><h2>A few things we have built.</h2></div>
+        <div class="work-grid">
+          <article class="work-card work-main">
+            <div class="work-tag"><i aria-hidden="true"></i> IN USE</div>
+            <h3>Business task automation.</h3>
+            <p>One place to run tasks across dozens of business tools, with less repeated manual work.</p>
+          </article>
+          <article class="work-card">
+            <div class="work-tag research"><i aria-hidden="true"></i> MOTIQ LABS / RESEARCH</div>
+            <h3>Helping a robot pick up objects.</h3>
+            <p>A research project using cameras and machine learning to help a robot choose how to grasp an object.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <g clip-path="url(#tri-a)">
-        <rect x="0" y="0" width="520" height="320" fill="rgba(157,196,77,.08)"/>
-        <line x1="0" y1="282" x2="520" y2="282" stroke="#6F9B45" stroke-width="1.5"/>
-        <line x1="0" y1="242" x2="490" y2="242" stroke="rgba(62,107,69,.5)"/>
-        <line x1="24" y1="242" x2="490" y2="242" stroke="#9DC44D" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 48"/>
-        <line x1="0" y1="262" x2="470" y2="262" stroke="rgba(62,107,69,.5)"/>
-        <line x1="48" y1="262" x2="470" y2="262" stroke="#8FB369" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 48"/>
-        <line x1="70" y1="282" x2="70" y2="252" stroke="#9DC44D" stroke-width="1.6"/>
-        <circle cx="70" cy="238" r="16" fill="rgba(157,196,77,.12)" stroke="#9DC44D" stroke-width="1.6"/>
-        <g transform="translate(0,282)">
-          <!-- static transform is the reduced-motion resting spot; the animation overrides it -->
-          <g class="an a-drive-sm" transform="translate(150,0)" style="animation-duration:13s">
-            <rect x="-20" y="-22" width="40" height="15" rx="4" fill="rgba(157,196,77,.15)" stroke="#D7F27D" stroke-width="1.6"/>
-            <circle cx="-11" cy="-6" r="6" fill="rgba(11,12,15,.6)" stroke="#D7F27D" stroke-width="1.6"/>
-            <circle cx="11" cy="-6" r="6" fill="rgba(11,12,15,.6)" stroke="#D7F27D" stroke-width="1.6"/>
-            <line x1="0" y1="-22" x2="0" y2="-34" stroke="#D7F27D" stroke-width="1.4"/>
-            <circle cx="0" cy="-37" r="3" fill="#D7F27D"/>
-          </g>
-        </g>
-      </g>
+    <section class="section section-grid" id="about">
+      <div class="wrap about-layout">
+        <div class="section-head"><p class="eyebrow">ABOUT US</p><h2>You work directly with us.</h2><p>Two engineers, from the first conversation to a working solution.</p></div>
+        <div class="founder-system" aria-label="Motiq founders and areas of expertise">
+          <article class="founder">
+            <span class="mono">AI &amp; AUTOMATION</span>
+            <h3>Marijan Miletić</h3>
+            <p>Builds AI tools and automates everyday business tasks.</p>
+          </article>
+          <article class="founder founder-right">
+            <span class="mono">CLOUD &amp; SUPPORT</span>
+            <h3>Ivan Deverić</h3>
+            <p>Sets up cloud infrastructure and keeps applications running.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <g clip-path="url(#tri-i)">
-        <rect x="360" y="0" width="560" height="320" fill="rgba(240,177,0,.08)"/>
-        <line x1="380" y1="282" x2="920" y2="282" stroke="#CBA34E" stroke-width="1.5"/>
-        <g class="an a-spin" style="transform-origin:700px 150px;animation-duration:8s">
-          <circle cx="700" cy="150" r="28" fill="rgba(240,177,0,.08)" stroke="#F0B100" stroke-width="2"/>
-          <circle cx="700" cy="150" r="10" fill="none" stroke="#F0B100" stroke-width="1.4"/>
-          <line x1="712" y1="150" x2="726" y2="150" stroke="#F0B100" stroke-width="1.4"/>
-          <line x1="706" y1="160" x2="713" y2="173" stroke="#F0B100" stroke-width="1.4"/>
-          <line x1="694" y1="160" x2="687" y2="173" stroke="#F0B100" stroke-width="1.4"/>
-          <line x1="688" y1="150" x2="674" y2="150" stroke="#F0B100" stroke-width="1.4"/>
-          <line x1="694" y1="140" x2="687" y2="127" stroke="#F0B100" stroke-width="1.4"/>
-          <line x1="706" y1="140" x2="713" y2="127" stroke="#F0B100" stroke-width="1.4"/>
-        </g>
-        <line x1="540" y1="246" x2="880" y2="246" stroke="#CBA34E" stroke-width="2"/>
-        <line x1="580" y1="246" x2="580" y2="282" stroke="rgba(203,163,78,.5)"/>
-        <line x1="700" y1="246" x2="700" y2="282" stroke="rgba(203,163,78,.5)"/>
-        <line x1="820" y1="246" x2="820" y2="282" stroke="rgba(203,163,78,.5)"/>
-        <g clip-path="url(#belt-o)">
-          <g class="an a-belt-sm" style="animation-duration:4s">
-            <rect x="560" y="222" width="30" height="22" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.5"/>
-            <rect x="680" y="222" width="30" height="22" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.5"/>
-            <rect x="800" y="222" width="30" height="22" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.5"/>
-          </g>
-        </g>
-      </g>
+    <section class="section contact-section section-grid" id="contact">
+      <div class="wrap contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow">LET'S TALK</p>
+          <h2>What takes up<br><span class="accent">too much of your time?</span></h2>
+          <p>Tell us about one task you would like to simplify. We will suggest where to start.</p>
+          <div class="contact-direct"><span>Prefer email?</span><a href="mailto:info@motiq.biz">info@motiq.biz</a></div>
+          <p class="location">Based in Zagreb · Europe, the US &amp; worldwide</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+          <label><span>Work email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label><span>Company</span><input type="text" name="company" autocomplete="organization"></label>
+          <label><span>What would you like help with?</span><textarea name="message" rows="4" required></textarea></label>
+          <button class="btn btn-primary form-submit" type="submit"><span class="link-label">Prepare an email</span> <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12H19M13 6L19 12L13 18"/></svg></button>
+          <p class="form-note">Opens your email app with these details. You send the message from there.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-      <g clip-path="url(#tri-s)">
-        <rect x="740" y="0" width="460" height="320" fill="rgba(76,195,217,.08)"/>
-        <line x1="760" y1="282" x2="1200" y2="282" stroke="rgba(76,195,217,.4)" stroke-width="1.5"/>
-        <line x1="930" y1="96" x2="1160" y2="96" stroke="rgba(76,195,217,.35)" stroke-width="1.5"/>
-        <path d="M930,96 H1160" fill="none" stroke="#8FE3F2" stroke-width="2" stroke-dasharray="5 28" class="an a-flow" style="animation-duration:4s"/>
-        <line x1="930" y1="96" x2="930" y2="132" stroke="rgba(76,195,217,.35)"/>
-        <line x1="1060" y1="96" x2="1060" y2="132" stroke="rgba(76,195,217,.35)"/>
-        <rect x="880" y="132" width="100" height="150" rx="5" fill="rgba(76,195,217,.07)" stroke="#4CC3D9" stroke-width="1.6"/>
-        <line x1="880" y1="158" x2="980" y2="158" stroke="rgba(76,195,217,.25)"/>
-        <line x1="880" y1="184" x2="980" y2="184" stroke="rgba(76,195,217,.25)"/>
-        <line x1="880" y1="210" x2="980" y2="210" stroke="rgba(76,195,217,.25)"/>
-        <line x1="880" y1="236" x2="980" y2="236" stroke="rgba(76,195,217,.25)"/>
-        <line x1="880" y1="262" x2="980" y2="262" stroke="rgba(76,195,217,.25)"/>
-        <rect x="938" y="140" width="28" height="7" fill="rgba(18,162,196,.5)"/>
-        <circle class="an a-blink" cx="894" cy="146" r="3" fill="#8FE3F2" style="animation-duration:1.8s"/>
-        <circle class="an a-blink" cx="906" cy="146" r="3" fill="#8FE3F2" style="animation-duration:2.5s"/>
-        <circle class="an a-blink" cx="918" cy="146" r="3" fill="#8FE3F2" style="animation-duration:3.1s"/>
-        <rect x="1010" y="132" width="100" height="150" rx="5" fill="rgba(76,195,217,.07)" stroke="#4CC3D9" stroke-width="1.6"/>
-        <line x1="1010" y1="158" x2="1110" y2="158" stroke="rgba(76,195,217,.25)"/>
-        <line x1="1010" y1="184" x2="1110" y2="184" stroke="rgba(76,195,217,.25)"/>
-        <line x1="1010" y1="210" x2="1110" y2="210" stroke="rgba(76,195,217,.25)"/>
-        <line x1="1010" y1="236" x2="1110" y2="236" stroke="rgba(76,195,217,.25)"/>
-        <line x1="1010" y1="262" x2="1110" y2="262" stroke="rgba(76,195,217,.25)"/>
-        <rect x="1068" y="140" width="28" height="7" fill="rgba(18,162,196,.5)"/>
-        <circle class="an a-blink" cx="1024" cy="146" r="3" fill="#8FE3F2" style="animation-duration:2.2s"/>
-        <circle class="an a-blink" cx="1036" cy="146" r="3" fill="#8FE3F2" style="animation-duration:1.6s"/>
-        <circle class="an a-blink" cx="1048" cy="146" r="3" fill="#8FE3F2" style="animation-duration:2.8s"/>
-      </g>
-
-      <line class="tri-div" x1="520" y1="0" x2="380" y2="320" stroke="rgba(237,238,241,.22)" stroke-width="2"/>
-      <line class="tri-div" x1="900" y1="0" x2="760" y2="320" stroke="rgba(237,238,241,.22)" stroke-width="2"/>
-    </svg>
-
-    <!-- Agriculture: field with driving rover, drone, sun -->
-    <svg class="scene sc-a" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-      <path d="M0,292 Q260,200 520,258 T1200,236 L1200,320 L0,320 Z" fill="rgba(157,196,77,.07)"/>
-      <path d="M420,292 Q760,224 1200,268 L1200,320 L420,320 Z" fill="rgba(157,196,77,.05)"/>
-      <g class="an a-spin" style="transform-origin:1020px 84px;animation-duration:70s" stroke="#D7F27D">
-        <line x1="1020" y1="50" x2="1020" y2="38"/>
-        <line x1="1020" y1="118" x2="1020" y2="130"/>
-        <line x1="986" y1="84" x2="974" y2="84"/>
-        <line x1="1054" y1="84" x2="1066" y2="84"/>
-        <line x1="1044" y1="60" x2="1053" y2="51"/>
-        <line x1="996" y1="60" x2="987" y2="51"/>
-        <line x1="1044" y1="108" x2="1053" y2="117"/>
-        <line x1="996" y1="108" x2="987" y2="117"/>
-      </g>
-      <circle cx="1020" cy="84" r="26" fill="rgba(215,242,125,.1)" stroke="#D7F27D" stroke-width="1.5"/>
-      <g stroke="#9DC44D" stroke-width="1.6">
-        <line x1="120" y1="292" x2="120" y2="252"/>
-        <circle cx="120" cy="234" r="22" fill="rgba(157,196,77,.12)"/>
-        <circle cx="100" cy="252" r="12" fill="rgba(157,196,77,.12)"/>
-        <line x1="250" y1="292" x2="250" y2="262"/>
-        <circle cx="250" cy="246" r="16" fill="rgba(157,196,77,.12)"/>
-      </g>
-      <line x1="320" y1="252" x2="1180" y2="252" stroke="rgba(62,107,69,.55)"/>
-      <line x1="348" y1="252" x2="1180" y2="252" stroke="#9DC44D" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 56"/>
-      <line x1="320" y1="272" x2="1180" y2="272" stroke="rgba(62,107,69,.55)"/>
-      <line x1="376" y1="272" x2="1180" y2="272" stroke="#8FB369" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 56"/>
-      <line x1="0" y1="292" x2="1200" y2="292" stroke="#6F9B45" stroke-width="1.5"/>
-      <g transform="translate(0,292)">
-        <!-- static transform is the reduced-motion resting spot; the animation overrides it -->
-        <g class="an a-drive" transform="translate(480,0)" style="animation-duration:26s">
-          <polygon class="an a-beam" style="animation-duration:3s" points="0,-46 64,-26 64,-66" fill="#D7F27D" opacity=".1"/>
-          <rect x="-28" y="-30" width="56" height="20" rx="5" fill="rgba(157,196,77,.15)" stroke="#D7F27D" stroke-width="1.8"/>
-          <circle cx="-15" cy="-8" r="8" fill="rgba(11,12,15,.6)" stroke="#D7F27D" stroke-width="1.8"/>
-          <circle cx="15" cy="-8" r="8" fill="rgba(11,12,15,.6)" stroke="#D7F27D" stroke-width="1.8"/>
-          <line x1="0" y1="-30" x2="0" y2="-46" stroke="#D7F27D" stroke-width="1.6"/>
-          <circle cx="0" cy="-49" r="4" fill="#D7F27D"/>
-        </g>
-      </g>
-      <g class="an a-hover" style="animation-duration:3.4s">
-        <g transform="translate(740,120)" stroke="#9DC44D" stroke-width="1.6">
-          <line x1="-18" y1="0" x2="18" y2="0"/>
-          <circle cx="-18" cy="-5" r="7" fill="none"/>
-          <circle cx="18" cy="-5" r="7" fill="none"/>
-          <rect x="-6" y="-2" width="12" height="8" rx="2" fill="rgba(157,196,77,.15)"/>
-          <line x1="0" y1="8" x2="0" y2="150" stroke-dasharray="3 7" opacity=".3"/>
-        </g>
-      </g>
-    </svg>
-
-    <!-- Industry: factory, gears, conveyor, beacon -->
-    <svg class="scene sc-i" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-      <path d="M60,292 V206 L150,164 V206 H240 L330,164 V206 H420 V292 Z" fill="rgba(240,177,0,.06)" stroke="rgba(240,177,0,.35)" stroke-width="1.5"/>
-      <rect x="90" y="230" width="26" height="20" fill="none" stroke="rgba(240,177,0,.3)"/>
-      <rect x="150" y="230" width="26" height="20" fill="none" stroke="rgba(240,177,0,.3)"/>
-      <rect x="210" y="230" width="26" height="20" fill="none" stroke="rgba(240,177,0,.3)"/>
-      <line x1="380" y1="206" x2="380" y2="150" stroke="rgba(240,177,0,.35)" stroke-width="4"/>
-      <line x1="0" y1="292" x2="1200" y2="292" stroke="#CBA34E" stroke-width="1.5"/>
-      <g class="an a-spin" style="transform-origin:530px 180px;animation-duration:9s">
-        <circle cx="530" cy="180" r="36" fill="rgba(240,177,0,.08)" stroke="#F0B100" stroke-width="2"/>
-        <circle cx="530" cy="180" r="12" fill="none" stroke="#F0B100" stroke-width="1.5"/>
-        <line x1="544" y1="180" x2="564" y2="180" stroke="#F0B100" stroke-width="1.5"/>
-        <line x1="537" y1="192" x2="547" y2="209" stroke="#F0B100" stroke-width="1.5"/>
-        <line x1="523" y1="192" x2="513" y2="209" stroke="#F0B100" stroke-width="1.5"/>
-        <line x1="516" y1="180" x2="496" y2="180" stroke="#F0B100" stroke-width="1.5"/>
-        <line x1="523" y1="168" x2="513" y2="151" stroke="#F0B100" stroke-width="1.5"/>
-        <line x1="537" y1="168" x2="547" y2="151" stroke="#F0B100" stroke-width="1.5"/>
-      </g>
-      <g class="an a-spin" style="transform-origin:592px 226px;animation-duration:5s;animation-direction:reverse">
-        <circle cx="592" cy="226" r="18" fill="rgba(240,177,0,.08)" stroke="#CBA34E" stroke-width="2"/>
-        <line x1="592" y1="208" x2="592" y2="244" stroke="#CBA34E" stroke-width="1.4"/>
-        <line x1="574" y1="226" x2="610" y2="226" stroke="#CBA34E" stroke-width="1.4"/>
-      </g>
-      <line x1="640" y1="252" x2="1160" y2="252" stroke="#CBA34E" stroke-width="2.5"/>
-      <line x1="680" y1="252" x2="680" y2="292" stroke="rgba(203,163,78,.5)"/>
-      <line x1="800" y1="252" x2="800" y2="292" stroke="rgba(203,163,78,.5)"/>
-      <line x1="920" y1="252" x2="920" y2="292" stroke="rgba(203,163,78,.5)"/>
-      <line x1="1040" y1="252" x2="1040" y2="292" stroke="rgba(203,163,78,.5)"/>
-      <clipPath id="belt-i"><rect x="640" y="200" width="520" height="52"/></clipPath>
-      <g clip-path="url(#belt-i)">
-        <g class="an a-belt" style="animation-duration:5s">
-          <rect x="472" y="226" width="36" height="26" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.6"/>
-          <rect x="652" y="226" width="36" height="26" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.6"/>
-          <rect x="832" y="226" width="36" height="26" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.6"/>
-          <rect x="1012" y="226" width="36" height="26" rx="3" fill="rgba(240,177,0,.12)" stroke="#F0B100" stroke-width="1.6"/>
-        </g>
-      </g>
-      <line x1="1180" y1="292" x2="1180" y2="200" stroke="rgba(203,163,78,.6)" stroke-width="1.5"/>
-      <circle class="an a-blink" cx="1180" cy="192" r="7" fill="#FFD65C" style="animation-duration:1.4s"/>
-      <circle class="an a-blink" cx="1180" cy="192" r="13" fill="none" stroke="rgba(255,214,92,.5)" style="animation-duration:1.4s"/>
-    </svg>
-
-    <!-- Infrastructure: server racks, data bus, antenna -->
-    <svg class="scene sc-s" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-      <defs>
-        <g id="rack">
-          <rect x="160" y="122" width="110" height="170" rx="6" fill="rgba(76,195,217,.07)" stroke="#4CC3D9" stroke-width="1.6"/>
-          <line x1="160" y1="150" x2="270" y2="150" stroke="rgba(76,195,217,.25)"/>
-          <line x1="160" y1="178" x2="270" y2="178" stroke="rgba(76,195,217,.25)"/>
-          <line x1="160" y1="206" x2="270" y2="206" stroke="rgba(76,195,217,.25)"/>
-          <line x1="160" y1="234" x2="270" y2="234" stroke="rgba(76,195,217,.25)"/>
-          <line x1="160" y1="262" x2="270" y2="262" stroke="rgba(76,195,217,.25)"/>
-          <rect x="222" y="132" width="36" height="8" fill="rgba(18,162,196,.5)"/>
-          <rect x="222" y="160" width="36" height="8" fill="rgba(18,162,196,.35)"/>
-        </g>
-      </defs>
-      <line x1="60" y1="84" x2="1140" y2="84" stroke="rgba(76,195,217,.35)" stroke-width="1.5"/>
-      <path d="M60,84 H1140" fill="none" stroke="#8FE3F2" stroke-width="2" stroke-dasharray="6 34" class="an a-flow" style="animation-duration:4s"/>
-      <line x1="215" y1="84" x2="215" y2="122" stroke="rgba(76,195,217,.35)"/>
-      <line x1="415" y1="84" x2="415" y2="122" stroke="rgba(76,195,217,.35)"/>
-      <line x1="615" y1="84" x2="615" y2="122" stroke="rgba(76,195,217,.35)"/>
-      <line x1="815" y1="84" x2="815" y2="122" stroke="rgba(76,195,217,.35)"/>
-      <circle cx="215" cy="84" r="3" fill="#4CC3D9"/>
-      <circle cx="415" cy="84" r="3" fill="#4CC3D9"/>
-      <circle cx="615" cy="84" r="3" fill="#4CC3D9"/>
-      <circle cx="815" cy="84" r="3" fill="#4CC3D9"/>
-      <use href="#rack"/>
-      <use href="#rack" x="200"/>
-      <use href="#rack" x="400"/>
-      <use href="#rack" x="600"/>
-      <circle class="an a-blink" cx="176" cy="136" r="3" fill="#8FE3F2" style="animation-duration:1.6s"/>
-      <circle class="an a-blink" cx="190" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.1s"/>
-      <circle class="an a-blink" cx="204" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.7s"/>
-      <circle class="an a-blink" cx="376" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.4s"/>
-      <circle class="an a-blink" cx="390" cy="136" r="3" fill="#8FE3F2" style="animation-duration:1.9s"/>
-      <circle class="an a-blink" cx="404" cy="136" r="3" fill="#8FE3F2" style="animation-duration:3.1s"/>
-      <circle class="an a-blink" cx="576" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.9s"/>
-      <circle class="an a-blink" cx="590" cy="136" r="3" fill="#8FE3F2" style="animation-duration:1.7s"/>
-      <circle class="an a-blink" cx="604" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.3s"/>
-      <circle class="an a-blink" cx="776" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.0s"/>
-      <circle class="an a-blink" cx="790" cy="136" r="3" fill="#8FE3F2" style="animation-duration:2.6s"/>
-      <circle class="an a-blink" cx="804" cy="136" r="3" fill="#8FE3F2" style="animation-duration:3.3s"/>
-      <line x1="0" y1="292" x2="1200" y2="292" stroke="rgba(76,195,217,.4)" stroke-width="1.5"/>
-      <line x1="1080" y1="292" x2="1080" y2="150" stroke="rgba(76,195,217,.6)" stroke-width="1.5"/>
-      <circle cx="1080" cy="146" r="4" fill="#8FE3F2"/>
-      <path class="an a-blink" d="M1060,146 A20,20 0 0 1 1100,146" fill="none" stroke="#4CC3D9" stroke-width="1.5" style="animation-duration:2.4s"/>
-      <path class="an a-blink" d="M1046,146 A34,34 0 0 1 1114,146" fill="none" stroke="#4CC3D9" stroke-width="1.5" style="animation-duration:2.4s;animation-delay:.4s"/>
-      <path class="an a-blink" d="M1032,146 A48,48 0 0 1 1128,146" fill="none" stroke="#4CC3D9" stroke-width="1.5" style="animation-duration:2.4s;animation-delay:.8s"/>
-    </svg>
-
-    <!-- Clickable triptych slices (overview only) -->
-    <div class="slices">
-      <button type="button" class="slice slice-a" data-mode="a" title="Agriculture" aria-label="Show agriculture"></button>
-      <button type="button" class="slice slice-i" data-mode="i" title="Industry" aria-label="Show industry"></button>
-      <button type="button" class="slice slice-s" data-mode="s" title="Infrastructure" aria-label="Show infrastructure"></button>
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <div>
+        <a class="brand footer-brand" href="#top" aria-label="Motiq home">
+          <img class="logo-light" src="assets/brand/motiq-horizontal.svg" alt="Motiq" width="480" height="156" loading="lazy">
+          <img class="logo-dark" src="assets/brand/motiq-reversed.svg" alt="Motiq" width="480" height="156" loading="lazy">
+        </a>
+        <p>Private AI &amp; automation<br>Cloud &amp; support</p>
+      </div>
+      <div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div class="footer-links"><a href="#demo">See an example</a><a href="mailto:info@motiq.biz">info@motiq.biz</a><span>Zagreb, Croatia · Working worldwide</span></div>
     </div>
-  </div>
+    <div class="wrap footer-bottom"><span>© <span id="year">2026</span> Motiq. All rights reserved.</span><span>Systems. People. Progress.</span></div>
+  </footer>
 
-  <div class="wrap stage-inner">
-    <div class="hero intro" style="--d:0s">
-      <div class="view v-o">
-        <p class="eyebrow">Zagreb, Croatia · On-site across the EU</p>
-        <h1 class="headline">Four engineers building <span class="hl-a">robots</span>, <span class="hl-i">automation</span> and the <span class="hl-s">systems</span> that run them.</h1>
-        <p class="sub">We work across agriculture, industry and the infrastructure underneath both — based in Zagreb, deployed anywhere in the EU when the job needs us there. Choose where you work and we'll show you what we do.</p>
-      </div>
-      <div class="view v-a">
-        <p class="eyebrow">Agricultural robotics</p>
-        <h2 class="headline">Autonomy that has to work in a <span class="hl">field</span>, not a demo.</h2>
-        <p class="sub">Robotics and automation for orchards, vineyards and open fields — navigation, manipulation and mission planning built around real crops and real terrain.</p>
-      </div>
-      <div class="view v-i">
-        <p class="eyebrow">Industrial automation</p>
-        <h2 class="headline">Machines that <span class="hl">keep running</span> when nobody is watching.</h2>
-        <p class="sub">Robot cell integration, control and alarm systems, and maintenance driven by the data your machines already produce.</p>
-      </div>
-      <div class="view v-s">
-        <p class="eyebrow">Cloud &amp; AI infrastructure</p>
-        <h2 class="headline">The <span class="hl">compute layer</span> behind everything above.</h2>
-        <p class="sub">From a local build to production on AWS — CI/CD, Kubernetes, networking, monitoring and disaster recovery, run at 99.99%+ uptime. The systems our robots depend on, run for other people too.</p>
-      </div>
-    </div>
-
-    <div class="stage-bottom intro" style="--d:.15s">
-      <div class="tabs" role="tablist" aria-label="Areas of work">
-        <button type="button" class="tab" role="tab" data-mode="o" aria-selected="true">Overview</button>
-        <button type="button" class="tab" role="tab" data-mode="a" aria-selected="false" tabindex="-1">Agriculture</button>
-        <button type="button" class="tab" role="tab" data-mode="i" aria-selected="false" tabindex="-1">Industry</button>
-        <button type="button" class="tab" role="tab" data-mode="s" aria-selected="false" tabindex="-1">Infrastructure</button>
-      </div>
-      <div class="view v-a">
-        <div class="caps"><span>Field navigation</span><span>Soft-fruit handling</span><span>Mission planning</span><span>Perception</span></div>
-      </div>
-      <div class="view v-i">
-        <div class="caps"><span>Robot cells</span><span>Control &amp; alarm systems</span><span>Predictive maintenance</span><span>Retrofits</span></div>
-      </div>
-      <div class="view v-s">
-        <div class="caps"><span>AWS &amp; EKS</span><span>CI/CD &amp; GitOps</span><span>99.99%+ uptime</span><span>Monitoring &amp; alerting</span><span>Disaster recovery</span><span>Security &amp; SOC2</span><span>RAG pipelines</span></div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ============ Tech marquee ============ -->
-<div class="marquee" aria-label="Technologies we work with">
-  <div class="marquee-track">
-    <div class="marquee-group">ROS 2&nbsp;·&nbsp;NVIDIA Isaac Sim&nbsp;·&nbsp;Python&nbsp;·&nbsp;C++&nbsp;·&nbsp;AWS&nbsp;·&nbsp;Kubernetes&nbsp;·&nbsp;ArgoCD&nbsp;·&nbsp;Docker&nbsp;·&nbsp;FastAPI&nbsp;·&nbsp;Next.js&nbsp;·&nbsp;PLC &amp; SCADA&nbsp;·&nbsp;Prometheus&nbsp;·&nbsp;Grafana&nbsp;·&nbsp;Kafka&nbsp;·&nbsp;PostgreSQL&nbsp;·&nbsp;RAG pipelines&nbsp;·&nbsp;Edge AI&nbsp;·&nbsp;UR5&nbsp;·&nbsp;RGB-D perception&nbsp;·&nbsp;</div>
-    <div class="marquee-group" aria-hidden="true">ROS 2&nbsp;·&nbsp;NVIDIA Isaac Sim&nbsp;·&nbsp;Python&nbsp;·&nbsp;C++&nbsp;·&nbsp;AWS&nbsp;·&nbsp;Kubernetes&nbsp;·&nbsp;ArgoCD&nbsp;·&nbsp;Docker&nbsp;·&nbsp;FastAPI&nbsp;·&nbsp;Next.js&nbsp;·&nbsp;PLC &amp; SCADA&nbsp;·&nbsp;Prometheus&nbsp;·&nbsp;Grafana&nbsp;·&nbsp;Kafka&nbsp;·&nbsp;PostgreSQL&nbsp;·&nbsp;RAG pipelines&nbsp;·&nbsp;Edge AI&nbsp;·&nbsp;UR5&nbsp;·&nbsp;RGB-D perception&nbsp;·&nbsp;</div>
-  </div>
-</div>
-
-<!-- ============ Work ============ -->
-<section class="sec" id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">01</span>
-      <h2 class="sec-title">What we've built</h2>
-    </div>
-    <div class="grid">
-      <article class="card reveal">
-        <span class="card-index">01</span>
-        <h3>RoboPilot</h3>
-        <p>A 13-tool server that lets a language model drive a simulated robot in NVIDIA Isaac Sim over ROS 2. Plain-language instructions become motion.</p>
-        <span class="tag tag-research">Research</span>
-      </article>
-      <article class="card reveal">
-        <span class="card-index">02</span>
-        <h3>ScadaCopilot</h3>
-        <p>A natural-language interface over industrial control data. Roughly 3,400 lines of FastAPI and Next.js, built in 48 hours at a Zagreb hackathon.</p>
-        <span class="tag tag-prototype">Prototype</span>
-      </article>
-      <article class="card reveal">
-        <span class="card-index">03</span>
-        <h3>Operations server</h3>
-        <p>An 88-tool automation server running the day-to-day operations of a multi-unit rental business. Live and in daily use.</p>
-        <span class="tag tag-production">Production</span>
-      </article>
-      <article class="card reveal">
-        <span class="card-index">04</span>
-        <h3>Adaptive grasping</h3>
-        <p>Master's research on a UR5 arm ranking grasp candidates from RGB-D data, combining pose estimation with a learned scoring model.</p>
-        <span class="tag tag-research">Research</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Team ============ -->
-<section class="sec" id="team">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">02</span>
-      <h2 class="sec-title">Team</h2>
-    </div>
-    <div class="people">
-      <div class="person reveal">Marijan<span>Robotics · AI</span></div>
-      <div class="person reveal">Ivan<span>AWS · Kubernetes · DevOps</span></div>
-      <div class="person reveal">Petar<span>Mechatronics · Cybersecurity · MCU</span></div>
-      <div class="person reveal">Dorian<span>Automation · PLC · Electrical design</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ How we work ============ -->
-<section class="sec" id="process">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">03</span>
-      <h2 class="sec-title">How we work</h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="step-index">01</span>
-        <h3>Scope</h3>
-        <p>We start on your site — field, plant floor or server room, anywhere in the EU — and pin down the problem, the constraints and what success looks like.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-index">02</span>
-        <h3>Prototype</h3>
-        <p>A working proof on your real data and hardware in weeks, not a slide deck. If it doesn't survive reality, it doesn't ship.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-index">03</span>
-        <h3>Deploy</h3>
-        <p>Integration and commissioning on-site. We stay until it runs on its own — then hand it over, documented.</p>
-      </div>
-      <div class="step reveal">
-        <span class="step-index">04</span>
-        <h3>Support</h3>
-        <p>Monitoring, maintenance and iteration after handover. Remote first, back on-site whenever needed.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ Contact ============ -->
-<section class="sec sec-contact" id="contact">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">04</span>
-      <h2 class="sec-title">Contact</h2>
-    </div>
-    <p class="contact-kicker reveal">Open to projects, collaborations and people who want to build this with us. We're mobile — for on-site work, commissioning and integration we travel anywhere in the EU.</p>
-    <div class="cta-row reveal">
-      <a class="cta-mail" href="mailto:info@motiq.biz">info@motiq.biz<span class="arr" aria-hidden="true">↗</span></a>
-      <button type="button" class="copy-btn" data-email="info@motiq.biz" aria-label="Copy email address">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-        <span class="copy-label">Copy</span>
-      </button>
-    </div>
-    <p class="contact-loc reveal">Based in Zagreb, Croatia · On-site across the EU · 45.815° N, 15.982° E</p>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-foot">
-  <div class="wrap foot-inner">
-    <span class="foot-brand">Motiq<span class="foot-dots" aria-hidden="true"><i></i><i></i><i></i></span></span>
-    <span>© <span id="year">2026</span> — Zagreb, Croatia · Working across the EU</span>
-  </div>
-</footer>
-
-<script>
-/* Intro trigger lives inline so the hero appears even if main.js fails to load.
-   Double rAF lets initial styles paint first so the transition actually runs. */
-requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('loaded')})});
-</script>
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
