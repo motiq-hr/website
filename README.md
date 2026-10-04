@@ -27,6 +27,8 @@ npm run build
 
 The build validates matching translation keys and generates both entry pages with content-hashed CSS and JavaScript. Commit the source, generated pages and referenced asset exports together. Older hashed assets remain available for cached pages. No framework, backend or runtime dependency is required.
 
+The hero includes illustrative object-handling and agriculture scenes, with an explicit pause control. CSS motion stops offscreen and in background tabs, and is disabled when reduced motion is requested.
+
 The AI-BOOST section describes selection for ADVANCE and ongoing prototype development; it does not claim a completed robot deployment or prize funding. The document-assistant panel is an explicitly illustrative example. The contact form prepares a message in the visitor's email app; visitors send it themselves.
 
 The approved brand package on Google Drive was checked against the canonical assets for this refresh. Forest green remains `#1E3A2E`; olive and terracotta from the existing web palette provide supporting accents.
