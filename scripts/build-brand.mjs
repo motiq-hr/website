@@ -13,15 +13,17 @@ const master = JSON.parse(await fs.readFile(path.join(dir, 'master.json'), 'utf8
 const { ink, forest, white } = master.colors;
 const symbol = (color) => `<g fill="${color}"><path d="${master.symbol_path}"/><path d="${master.symbol_path}" transform="${master.symbol_mirror}"/></g>`;
 const wordmark = (color) => `<g fill="${color}" fill-rule="evenodd">${master.wordmark_paths.map(d => `<path d="${d}"/>`).join('')}</g>`;
+const lockup = (color) => `<g transform="translate(0 ${master.lockup.symbol_y}) scale(${master.lockup.symbol_scale})">${symbol(color)}</g><g transform="translate(${master.lockup.wordmark_dx} 0)" fill="${color}" fill-rule="evenodd">${master.wordmark_paths.slice(master.lockup.wordmark_skip).map(d => `<path d="${d}"/>`).join('')}</g>`;
 const svg = (box, content, title = master.name) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${box}" role="img" aria-label="${title}"><title>${title}</title>${content}</svg>\n`;
 const write = (name, content) => fs.writeFile(path.join(dir, name), content);
 for (const [name, color] of [['motiq-horizontal', ink], ['motiq-black', '#000000'], ['motiq-reversed', white], ['motiq-forest', forest]]) {
-  await write(`${name}.svg`, svg('-8 -8 1076 294', symbol(color) + wordmark(color)));
+  await write(`${name}.svg`, svg(master.lockup.viewbox, lockup(color)));
 }
 for (const [name, color] of [['motiq-icon', ink], ['motiq-icon-black', '#000000'], ['motiq-icon-reversed', white], ['motiq-icon-forest', forest]]) {
   await write(`${name}.svg`, svg(master.symbol_viewbox, symbol(color)));
 }
-await write('motiq-wordmark.svg', svg(master.wordmark_viewbox, wordmark(ink)));
+await write('motiq-wordmark.svg', svg(master.lockup.viewbox, lockup(ink)));
+// Secondary stacked layout keeps the standalone symbol and a conventional name.
 await write('motiq-stacked.svg', svg('0 0 680 550', `<g transform="translate(150 20)">${symbol(ink)}</g><g transform="translate(-250 300) scale(.8)">${wordmark(ink)}</g>`));
 // Legacy filename kept so older links also receive the approved symbol.
 await write('motiq-structure.svg', svg(master.symbol_viewbox, symbol(forest)));

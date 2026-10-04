@@ -1,7 +1,11 @@
 {
   "name": "Motiq — M + hvataljka",
-  "version": "2026-10-04",
-  "colors": { "ink": "#111413", "forest": "#1E3A2E", "white": "#FFFFFF" },
+  "version": "2026-10-04-integrated",
+  "colors": {
+    "ink": "#111413",
+    "forest": "#1E3A2E",
+    "white": "#FFFFFF"
+  },
   "symbol_viewbox": "-8 -8 396 280",
   "symbol_path": "M0 63Q0 58 4 55L67 3Q74 -3 81 3L173 90Q177 94 177 100V169Q177 181 168 175L66 103Q56 96 56 107V114Q56 119 60 124L117 189Q122 194 122 201V257Q122 265 115 265H50Q43 265 39 260L6 226Q0 220 0 212Z",
   "symbol_mirror": "translate(380 0) scale(-1 1)",
@@ -12,5 +16,12 @@
     "M770 98V62H810V98H843V135H810V176Q810 190 823 191L846 189V225Q829 230 810 226Q770 218 770 180V135H757V98Z",
     "M858 98H899V225H858ZM879 32A24 24 0 1 1 879 80A24 24 0 1 1 879 32Z",
     "M974 94Q1001 94 1016 113V98H1058V275H1016V211Q1001 230 974 230A68 68 0 1 1 974 94ZM984 130A32 32 0 1 0 984 194A32 32 0 1 0 984 130Z"
-  ]
+  ],
+  "lockup": {
+    "viewbox": "-8 23 765 260",
+    "symbol_scale": 0.73,
+    "symbol_y": 31,
+    "wordmark_dx": -309,
+    "wordmark_skip": 1
+  }
 }
