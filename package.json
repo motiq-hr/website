@@ -2,7 +2,8 @@
   "name": "motiq-website-assets",
   "private": true,
   "scripts": {
-    "brand:build": "node scripts/build-brand.mjs"
+    "brand:build": "node scripts/build-brand.mjs",
+    "build": "node scripts/build-site.mjs"
   },
   "devDependencies": {
     "sharp": "0.35.5"
