@@ -1652,7 +1652,3 @@ h3 {
 .work-graphic svg {
   height: 100%;
 }
-.robot-figure :focus-visible,
-.boost-section :focus-visible {
-  outline-color: #e3b697;
-}
