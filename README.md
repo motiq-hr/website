@@ -5,7 +5,7 @@
 
 # Motiq website
 
-Public website and canonical brand assets for [Motiq](https://www.motiq.biz), an engineering team working across private AI, robotics, automation and cloud infrastructure.
+Public website and canonical brand assets for [Motiq](https://www.motiq.biz), a three-person engineering team building robotics, computer vision, private AI and automation with robots and AI.
 
 The site is static HTML, CSS and JavaScript, with English (`index.html`) and Croatian (`hr.html`) pages. GitHub Pages publishes the root of `master` to **www.motiq.biz**.
 
@@ -15,7 +15,21 @@ The site is static HTML, CSS and JavaScript, with English (`index.html`) and Cro
 python3 -m http.server 8766 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8766`. Check both languages, light/dark themes and mobile layout before publishing. HTML references a content-hashed CSS export; after editing `css/style.css`, generate a matching hashed copy and update both pages.
+Open `http://127.0.0.1:8766`. Check both languages, light/dark themes and mobile layout before publishing.
+
+## Content and build
+
+Edit `src/site.html` for shared structure, `locales/en.json` / `locales/hr.json` for copy, and `css/tokens.css` / `css/style.css` for styling. Run:
+
+```sh
+npm run build
+```
+
+The build validates matching translation keys and generates both entry pages with content-hashed CSS and JavaScript. Commit the source, generated pages and referenced asset exports together. Older hashed assets remain available for cached pages. No framework, backend or runtime dependency is required.
+
+The AI-BOOST section describes selection for ADVANCE and ongoing prototype development; it does not claim a completed robot deployment or prize funding. The document-assistant panel is an explicitly illustrative example. The contact form prepares a message in the visitor's email app; visitors send it themselves.
+
+The approved brand package on Google Drive was checked against the canonical assets for this refresh. Forest green remains `#1E3A2E`; olive and terracotta from the existing web palette provide supporting accents.
 
 ## Logo
 
