@@ -1,0 +1,141 @@
+/* Motiq web brand system. Reference colors are kept unchanged. */
+:root {
+  color-scheme: light;
+  --brand-forest: #1e3a2e;
+  --brand-olive: #6b7352;
+  --brand-terracotta: #b15e3c;
+  --brand-graphite: #2e2e2e;
+  --color-ink: #25292a;
+  --color-white: #ffffff;
+  --color-paper: #f7f6f2;
+  --color-stone: #eeede6;
+  --color-sage: #e7ebdf;
+  --color-clay: #f3e8df;
+  --color-muted: #5b605f;
+  --color-subtle: #656b69;
+  --color-border: #d8ddd3;
+  --color-border-strong: #81917f;
+  --color-forest-deep: #132b21;
+  --color-forest-hover: #2c503d;
+  --color-terracotta-ink: #94482c;
+  --color-on-dark: #fcfcf8;
+  --color-muted-on-dark: #c6cac8;
+  --color-border-on-dark: #555d5a;
+  --color-accent-on-dark: #e3b697;
+
+  --background-page: var(--color-paper);
+  --background-section: var(--color-white);
+  --background-subtle: #efeeea;
+  --background-card: var(--color-white);
+  --background-inverse: #25292a;
+  --background-panel-inverse: #1c1f20;
+  --background-control-inverse: #303635;
+  --background-contact: #efeeea;
+  --background-tag: #eeede8;
+  --background-accent-soft: #f3e8df;
+  --text-accent: #94482c;
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-muted);
+  --text-subtle: var(--color-subtle);
+  --border-default: var(--color-border);
+  --border-strong: var(--color-border-strong);
+  --button-primary-bg: var(--brand-graphite);
+  --button-primary-hover: #454a48;
+  --button-primary-text: var(--color-white);
+  --button-secondary-bg: transparent;
+  --button-secondary-hover: var(--background-tag);
+  --button-secondary-text: var(--text-primary);
+  --button-secondary-border: var(--color-border-strong);
+  --button-disabled-bg: var(--color-stone);
+  --button-disabled-text: var(--color-subtle);
+  --focus-ring: var(--color-terracotta-ink);
+
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-size-xs: .6875rem;
+  --font-size-sm: .8125rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-h1: clamp(2.5rem, 4.2vw, 4.65rem);
+  --font-size-h2: clamp(1.8rem, 2.6vw, 2.65rem);
+  --font-size-h3: clamp(1.5rem, 2.4vw, 2rem);
+  --line-height-body: 1.7;
+  --line-height-heading: 1.12;
+  --tracking-heading: -.05em;
+  --tracking-label: .13em;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --section-space: clamp(3rem, 4vw, 4.5rem);
+  --radius-sm: .375rem;
+  --radius-button: .375rem;
+  --radius-card: .75rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 8px rgb(30 58 46 / .04);
+  --shadow-card: 0 12px 32px rgb(30 58 46 / .07);
+  --shadow-elevated: 0 24px 64px rgb(19 43 33 / .16);
+  --container-width: 2880px;
+  --page-gutter: clamp(20px, 4vw, 120px);
+  --header-height: 76px;
+  --motion-fast: 160ms;
+  --motion-base: 240ms;
+  --ease-standard: cubic-bezier(.2, .7, .2, 1);
+}
+
+/* Global dark mode uses neutral graphite surfaces; brand colors remain intact. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background-page: #181a1b;
+  --background-section: #1d2021;
+  --background-subtle: #222526;
+  --background-card: #242829;
+  --background-contact: #202324;
+  --background-tag: #323735;
+  --background-accent-soft: #3c2d25;
+  --text-primary: #f2f1ed;
+  --text-secondary: #c2c6c3;
+  --text-subtle: #aab1ad;
+  --text-accent: #edb798;
+  --border-default: #434a46;
+  --border-strong: #7f8b83;
+  --button-primary-bg: #ebe9e2;
+  --button-primary-hover: #ffffff;
+  --button-primary-text: #242827;
+  --button-secondary-text: #f2f1ed;
+  --button-secondary-border: #7f8b83;
+  --button-secondary-hover: #343a37;
+  --button-disabled-bg: #323735;
+  --button-disabled-text: #aab1ad;
+  --focus-ring: #edb798;
+  --shadow-card: 0 12px 32px rgb(0 0 0 / .12);
+}
+
+/* Local inverse panels keep their own contrast in either global theme. */
+.theme-dark {
+  color-scheme: dark;
+  --background-card: var(--background-panel-inverse);
+  --text-primary: var(--color-on-dark);
+  --text-secondary: var(--color-muted-on-dark);
+  --text-subtle: var(--color-muted-on-dark);
+  --text-accent: var(--color-accent-on-dark);
+  --border-default: var(--color-border-on-dark);
+  --border-strong: var(--color-muted-on-dark);
+  --button-primary-bg: var(--color-paper);
+  --button-primary-hover: var(--color-white);
+  --button-primary-text: var(--brand-graphite);
+  --button-secondary-text: var(--color-on-dark);
+  --button-secondary-border: var(--color-border-on-dark);
+  --button-secondary-hover: var(--background-control-inverse);
+  --focus-ring: var(--color-accent-on-dark);
+}

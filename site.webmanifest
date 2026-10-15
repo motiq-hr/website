@@ -1,0 +1,31 @@
+{
+  "name": "Motiq Labs",
+  "short_name": "Motiq Labs",
+  "description": "Robotics, software and automation. Engineering team in Zagreb.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E3A2E",
+  "icons": [
+    {
+      "src": "assets/brand/app-icon-192.png?v=20261004-2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/brand/app-icon-512.png?v=20261004-2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/brand/app-icon-maskable-512.png?v=20261004-2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
